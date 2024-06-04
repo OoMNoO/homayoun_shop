@@ -31,10 +31,22 @@
                 success: function (data) { 
                     console.log("on login success")
                     console.log("data: ", data)
+                    if (data.user_data){
+                        let user_data = data.user_data
+                        console.log(user_data);
+                        // TODO: save user data in localstorage
+                        // TODO: nav to main page
+                    }
                 },
                 error: function (jqXHR, textStatus, errorThrown) { 
                     console.log("on login failure")
-                    console.log(jqXHR, textStatus, errorThrown);
+                    console.log(jqXHR);
+                    console.log(textStatus);
+                    console.log(errorThrown);
+                    if (jqXHR.responseJSON){
+                        let error_message = jqXHR.responseJSON
+                        console.log(error_message);
+                    }
                 }
             });
         }
@@ -68,10 +80,20 @@
                 success: function (data) { 
                     console.log("on login success")
                     console.log("data: ", data)
+                    if (data.user_data){
+                        let user_data = data.user_data
+                        console.log(user_data);
+                    }
                 },
                 error: function (jqXHR, textStatus, errorThrown) { 
                     console.log("on login failure")
-                    console.log(jqXHR, textStatus, errorThrown);
+                    console.log(jqXHR);
+                    console.log(textStatus);
+                    console.log(errorThrown);
+                    if (jqXHR.responseJSON){
+                        let error_message = jqXHR.responseJSON
+                        console.log(error_message);
+                    }
                 }
             });
         }

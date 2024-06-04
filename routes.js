@@ -28,6 +28,7 @@ router.post('/login', async (req, res) => {
   if (!user_found){
     res.status(404).json({ error: "username or password are incorrect!" });
   } else {
+    delete  user_data["password"]
     res.status(200).send({ user_data: user_data });
   }
   return;
@@ -41,9 +42,27 @@ router.post('/signup', (req, res) => {
   if (!(req.body['password'])){
     res.status(401).json({ error: "password not provided" });
   }
+  if (!(req.body['name'])){
+    res.status(401).json({ error: "name not provided" });
+  }
+  if (!(req.body['email'])){
+    res.status(401).json({ error: "email not provided" });
+  }
+  if (!(req.body['address'])){
+    res.status(401).json({ error: "address not provided" });
+  }
   console.log(req.body)
-  console.log("login")
-  res.status(200).send({ message: "logged in" });
+  console.log("signup")
+  let rawdata = fs.readFileSync('./db.json');
+  let db_data = JSON.parse(rawdata);
+  let users = db_data["users"]
+  let user_data = req.body
+  users.push(user_data)
+  console.log(users)
+  let data = JSON.stringify(db_data, undefined, 4);
+  fs.writeFileSync('./db.json', data);
+  delete  user_data["password"]
+  res.status(200).send({ user_data: user_data });
   return;
 });
 
