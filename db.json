@@ -1,5 +1,4 @@
-[
-    {
+{
         "users": [
             {
                 "username": "admin",
@@ -8,9 +7,7 @@
                 "address": "localhost",
                 "email": "admin@localhost"
             }
-        ]
-    },
-    {
+        ],
         "products": [
             {
                 "id": "287aec5d",
@@ -85,4 +82,3 @@
             }
         ]
     }
-]
