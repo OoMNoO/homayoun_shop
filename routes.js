@@ -1,76 +1,139 @@
-const express = require('express');
-const fs = require('fs');
+const express = require("express");
+const fs = require("fs");
+const { v4 } = require("uuid");
+const { randomBytes } = require("crypto");
 const router = express.Router();
 
-router.post('/login', async (req, res) => {
-  request = req.body
-  if (!(req.body['username'])){
+router.post("/logout", async (req, res) => {
+  request = req.body;
+  if (!request["token"]) {
+    res.status(401).json({ error: "token not provided" });
+  }
+  console.log(request);
+  console.log("logout");
+  let rawdata = fs.readFileSync("./db.json");
+  let db_data = JSON.parse(rawdata);
+  let auth = db_data["auth"];
+  let token = request["token"];
+  if (auth[token]) {
+    delete auth[token];
+    let data = JSON.stringify(db_data, undefined, 4);
+    fs.writeFileSync("./db.json", data);
+    res.status(200).send({ message: "user logged out" });
+  } else {
+    res.status(404).json({ error: "no login session found!" });
+  }
+  return;
+});
+
+router.post("/login", async (req, res) => {
+  request = req.body;
+  if (!request["username"]) {
     res.status(401).json({ error: "username not provided" });
   }
-  if (!(req.body['password'])){
+  if (!request["password"]) {
     res.status(401).json({ error: "password not provided" });
   }
-  console.log(req.body)
-  console.log("login")
-  let rawdata = fs.readFileSync('./db.json');
+  console.log(request);
+  console.log("login");
+  let rawdata = fs.readFileSync("./db.json");
   let db_data = JSON.parse(rawdata);
-  let users = db_data["users"]
-  let user_found = false
-  let user_data = {}
-  users.forEach(user => {
-    if (user["username"] == req.body['username'] && user["password"] == req.body['password']){
+  let users = db_data["users"];
+  let auth = db_data["auth"];
+  let user_found = false;
+  let user_data = {};
+  users.forEach((user) => {
+    if (
+      user["username"] == request["username"] &&
+      user["password"] == request["password"]
+    ) {
       user_found = true;
-      user_data = user
+      user_data = user;
     }
     console.log(user_found);
   });
   console.log(user_found);
-  if (!user_found){
+  if (!user_found) {
     res.status(404).json({ error: "username or password are incorrect!" });
   } else {
-    delete  user_data["password"]
-    res.status(200).send({ user_data: user_data });
+    let token = randomBytes(12).toString("hex");
+    auth[token] = {
+      id: user_data["id"],
+      ip: req.headers["x-forwarded-for"] || req.socket.remoteAddress,
+    };
+    console.log(users);
+    console.log(auth);
+    let data = JSON.stringify(db_data, undefined, 4);
+    fs.writeFileSync("./db.json", data);
+    delete user_data["password"];
+    res.status(200).send({ token: token, user_data: user_data });
   }
   return;
 });
 
-router.post('/signup', (req, res) => {
-  request = req.body
-  if (!(req.body['username'])){
+router.post("/signup", (req, res) => {
+  request = req.body;
+  if (!request["username"]) {
     res.status(401).json({ error: "username not provided" });
   }
-  if (!(req.body['password'])){
+  if (!request["password"]) {
     res.status(401).json({ error: "password not provided" });
   }
-  if (!(req.body['name'])){
+  if (!request["name"]) {
     res.status(401).json({ error: "name not provided" });
   }
-  if (!(req.body['email'])){
+  if (!request["email"]) {
     res.status(401).json({ error: "email not provided" });
   }
-  if (!(req.body['address'])){
+  if (!request["address"]) {
     res.status(401).json({ error: "address not provided" });
   }
-  console.log(req.body)
-  console.log("signup")
-  let rawdata = fs.readFileSync('./db.json');
+  console.log(request);
+  console.log("signup");
+  let rawdata = fs.readFileSync("./db.json");
   let db_data = JSON.parse(rawdata);
-  let users = db_data["users"]
-  let user_data = req.body
-  users.push(user_data)
-  console.log(users)
+  let users = db_data["users"];
+  let user_found = false;
+  users.forEach((user) => {
+    if (user["username"] == request["username"]) {
+      user_found = true;
+    }
+  });
+  if (user_found) {
+    res
+      .status(404)
+      .json({ error: "a user with this username already exsits!" });
+    return;
+  }
+  let auth = db_data["auth"];
+  let user_data = {
+    id: v4(),
+    username: request["username"],
+    password: request["password"],
+    name: request["name"],
+    email: request["email"],
+    address: request["address"],
+  };
+  users.push(user_data);
+  let token = randomBytes(12).toString("hex");
+  auth[token] = {
+    id: user_data["id"],
+    ip: req.headers["x-forwarded-for"] || req.socket.remoteAddress,
+  };
+  console.log(users);
+  console.log(auth);
   let data = JSON.stringify(db_data, undefined, 4);
-  fs.writeFileSync('./db.json', data);
-  delete  user_data["password"]
-  res.status(200).send({ user_data: user_data });
+  fs.writeFileSync("./db.json", data);
+  delete user_data["password"];
+  res.status(200).send({ token: token, user_data: user_data });
   return;
 });
 
-router.get('/products', (req, res) => {
-  res.send('List of products');
+router.get("/products", (req, res) => {
+  res.send("List of products");
 });
 
-router.get('/product/:id', (req, res) => {
+router.get("/product/:id", (req, res) => {
   const userId = req.params.id;
   res.send(`Details of product ${userId}`);
 });

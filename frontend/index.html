@@ -23,18 +23,17 @@
       <link rel="icon" href="images/fevicon.png" type="image/gif" />
       <!-- Scrollbar Custom CSS -->
       <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
-      <!-- Tweaks for older IEs-->
-      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
       <!-- fonts -->
       <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
       <!-- font awesome -->
-      <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	   <link rel="stylesheet" href="fonts/font-awesome-4.7.0/css/font-awesome.css">
+	   <link rel="stylesheet" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
       <!--  -->
       <!-- owl stylesheets -->
       <link href="https://fonts.googleapis.com/css?family=Great+Vibes|Poppins:400,700&display=swap&subset=latin-ext" rel="stylesheet">
       <link rel="stylesheet" href="css/owl.carousel.min.css">
       <link rel="stylesoeet" href="css/owl.theme.default.min.css">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+      <link rel="stylesheet" href="css/jquery.fancybox.min.css" media="screen">
    </head>
    <body>
       <!-- banner bg main start -->
@@ -48,8 +47,14 @@
                         <ul>
                            <li><a href="./index.html" style="font-weight: bold;font-size: 22px;">HomayounShop</a></li>
                            <li><a href="./aboutus.html">about  us</a></li>
-                           <li><a href="./login.html">Login</a></li>
-                           <li><a href="./signup.html">SignUp</a></li>
+                           <li id="login_nav"><a class="text-success" href="./login.html">Login</a></li>
+                           <li id="signup_nav"><a class="text-info" href="./signup.html">SignUp</a></li>
+                           <li id="profile_nav" class="d-none">
+                              <a class="bg-dark text-primary rounded px-4 py-2 d-flex justify-content-center align-items-center" href="./profile.html">
+                                 <div id="user-name"></div>
+                                 <img class="border border-primary rounded-circle w-25 ml-2 p-1" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAA/ElEQVR4nO2TMWoCQRSG/8pCSJHUJlbBE9n7XkTIOUzpMTSFLB4iiqw7f1IED+AFAsl2CosyG5JgZGbVnRRBf3jNsPN9M/veAKeRVnINYQRhmpeaETRphIS/QbneKrvWjmvlBcJoB/4jGYYQpE6B8qO8QJ3wz/rTGwjfA9zAjDyCKIAgaTinqPVyiyBpx7V8YmxTbdmTB4P/7+hzHcoexCx2e5Cv9dDhzeHg5rwC5QPULAvfgf1G2M337JW76RWU42Iwf4uecP966Yd3WIVwcjicX6M7g04u3ALl49Fw/ZYM3ALhKoBg5RGYrLzAZP5fVEYiJoOYvr/R52A7G5FPmGuoqERjAAAAAElFTkSuQmCC">
+                              </a>
+                           </li>
                         </ul>
                      </div>
                   </div>
@@ -246,21 +251,11 @@
          </div>
       </div>
       <!-- copyright section end -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-	<!-- <script src="js/jquery.min.js"></script>
-	<script src="js/jquery-3.0.0.min.js"></script> -->
+	   <script src="js/jquery.min.js"></script>
       <script src="js/popper.min.js"></script>
       <script src="js/bootstrap.bundle.min.js"></script>
-      <script src="js/plugin.js"></script>
-      <script src="js/custom.js"></script>
-      <script>
-         function openNav() {
-           document.getElementById("mySidenav").style.width = "250px";
-         }
-         
-         function closeNav() {
-           document.getElementById("mySidenav").style.width = "0";
-         }
-      </script>
+      <script src="js/main_page.js"></script>
+      <!-- <script src="js/plugin.js"></script> -->
+      <!-- <script src="js/custom.js"></script> -->
    </body>
 </html>
