@@ -23,8 +23,14 @@
             "id": "287aec5d",
             "name": "Half Sleve T-shirt",
             "detail": "Half Sleve T-shirt, Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos est magnam quibusdam maiores sit perferendis minima cupiditate iusto earum repudiandae maxime vitae nostrum, ea cumque iste ipsa hic commodi tempore.",
+            "img": [
+                "images/tshirt-1.png",
+                "images/tshirt-2.png",
+                "images/tshirt-3.png",
+                "images/tshirt-group.png"
+            ],
             "price": "129.00",
-            "sale-price": "99.00",
+            "sale_price": "99.00",
             "sizes": [
                 "S",
                 "M",
@@ -46,6 +52,9 @@
             "id": "d99291b4",
             "name": "Man - shirt",
             "detail": "Man - shirt, Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos est magnam quibusdam maiores sit perferendis minima cupiditate iusto earum repudiandae maxime vitae nostrum, ea cumque iste ipsa hic commodi tempore.",
+            "img": [
+                "images/dress-shirt-img.png"
+            ],
             "price": "30.00",
             "sizes": [
                 "L",
@@ -62,6 +71,9 @@
             "id": "8113cc80",
             "name": "Man - Tshirt",
             "detail": "Man - Tshirt, Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos est magnam quibusdam maiores sit perferendis minima cupiditate iusto earum repudiandae maxime vitae nostrum, ea cumque iste ipsa hic commodi tempore.",
+            "img": [
+                "images/tshirt-img.png"
+            ],
             "price": "12.00",
             "sizes": [
                 "S",
@@ -71,13 +83,16 @@
             "colors": [
                 "yellow"
             ],
-            "rating": "4.5",
+            "rating": "3",
             "reviews": "34"
         },
         {
             "id": "78dddb7e",
             "name": "Woman Scart",
             "detail": "Woman Scart, Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos est magnam quibusdam maiores sit perferendis minima cupiditate iusto earum repudiandae maxime vitae nostrum, ea cumque iste ipsa hic commodi tempore.",
+            "img": [
+                "images/women-clothes-img.png"
+            ],
             "price": "17.00",
             "sale-price": "8.00",
             "sizes": [
@@ -87,8 +102,8 @@
             "colors": [
                 "red"
             ],
-            "rating": "4.5",
-            "reviews": "34"
+            "rating": "2",
+            "reviews": "12"
         }
     ]
 }

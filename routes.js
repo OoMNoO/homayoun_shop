@@ -130,12 +130,45 @@ router.post("/signup", (req, res) => {
 });
 
 router.get("/products", (req, res) => {
-  res.send("List of products");
+  console.log("products");
+  let rawdata = fs.readFileSync("./db.json");
+  let db_data = JSON.parse(rawdata);
+  let products = db_data["products"];
+  console.log(products);
+  if (products) {
+    res.status(200).send({ products: products });
+  } else {
+    res.status(404).json({ error: "no products found!" });
+  }
+  return;
 });
 
-router.get("/product/:id", (req, res) => {
-  const userId = req.params.id;
-  res.send(`Details of product ${userId}`);
+router.get("/product/:product", (req, res) => {
+  const product_id = req.params.product;
+  if (!product_id) {
+    res.status(401).json({ error: "product id not provided" });
+  }
+  console.log(`Details of product ${product_id}`);
+  let rawdata = fs.readFileSync("./db.json");
+  let db_data = JSON.parse(rawdata);
+  let products = db_data["products"];
+  let product_found = false;
+  let product_data = {};
+  products.forEach((product) => {
+    if (product["id"] == product_id) {
+      product_found = true;
+      product_data = product;
+    }
+    console.log(product_found);
+  });
+  console.log(product_found);
+  if (!product_found) {
+    res.status(404).json({ error: "product not found!" });
+  } else {
+    console.log(product_data);
+    res.status(200).send({ product_data: product_data });
+  }
+  return;
 });
 
 module.exports = router;

@@ -6,88 +6,83 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>homayoun project</title>
+    <!-- style css -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <!-- Stylesheet -->
     <link rel="stylesheet" href="./css/product_style.css">
     <!---Boxicons CDN Setup for icons-->
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <!-- bootstrap css -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 </head>
 
 <body>
-    <div class="container">
+    <!-- header top section start -->
+    <div>
+       <div class="header_section_top">
+          <div class="row">
+             <div class="col-sm-12">
+                <div class="custom_menu">
+                   <ul>
+                      <li><a href="./index.html" style="font-weight: bold;font-size: 22px;">HomayounShop</a></li>
+                      <li><a href="./aboutus.html">about  us</a></li>
+                      <li id="login_nav"><a class="text-success" href="./login.html">Login</a></li>
+                      <li id="signup_nav"><a class="text-info" href="./signup.html">SignUp</a></li>
+                      <li id="profile_nav" class="d-none">
+                         <a class="bg-dark text-primary rounded px-4 py-2 d-flex justify-content-center align-items-center" href="./profile.html">
+                            <div id="user-name"></div>
+                            <img class="border border-primary rounded-circle w-25 ml-2 p-1" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAA/ElEQVR4nO2TMWoCQRSG/8pCSJHUJlbBE9n7XkTIOUzpMTSFLB4iiqw7f1IED+AFAsl2CosyG5JgZGbVnRRBf3jNsPN9M/veAKeRVnINYQRhmpeaETRphIS/QbneKrvWjmvlBcJoB/4jGYYQpE6B8qO8QJ3wz/rTGwjfA9zAjDyCKIAgaTinqPVyiyBpx7V8YmxTbdmTB4P/7+hzHcoexCx2e5Cv9dDhzeHg5rwC5QPULAvfgf1G2M337JW76RWU42Iwf4uecP966Yd3WIVwcjicX6M7g04u3ALl49Fw/ZYM3ALhKoBg5RGYrLzAZP5fVEYiJoOYvr/R52A7G5FPmGuoqERjAAAAAElFTkSuQmCC">
+                         </a>
+                         <button id="logout_btn" class="bg-dark text-primary rounded ml-2">
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAABp0lEQVR4nO2ZS0oDQRCGP3IA37hSQcHXJbLxeQrd6BnUvQtvoIjoQQRFE+JkuiZKFl7BxBu4MCMNCWkGBM30dNKhP6jt3/X3s6YGAoFAwFsElhIox7A9SCRQ1hrOE49hXcGzQGojFDzVYc1J8nrGFHzaSl76JtoRLBRuQMGdMeiXQEXgfsCodDV6Rm5cGGj3BtT7OK+ewK5hoEXRKOj0BkyhlFcvhZKxoh2Kxty3o6z5K8HAmK7AnIIDgQ9bmkOZrQiW8clAE6a778pVBBO4wKYBgTPjCn0RmLSTpTsDe+a7IlB/hSk7mTo6AwLHCr4N3aQGMza0Xd5CRxkTjTrM2tIfyICukxSc/CMkU52KPuRDMZDAZmZGBy2xr4diQGDDawOaBLYEzgUu/hIK3kdmC9k4xLWibqJwjRoksO/1QyZw6nUp0ewXc5deFnNZYljBRwNvMC9w6KQrEb6Jx/SbOHVmwPvGljJaiwp2bHyVSX8Fiu9KKLg1DOjGbDVHc7fqvLkbw6K5Chaj5aS9rmnAqsCjxeQftCau0TOW9xdT5GrWA4FAgCL4AbGnrEhRELtUAAAAAElFTkSuQmCC">
+                         </button>
+                      </li>
+                   </ul>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+    <!-- header top section start -->
+    <div class="container my-3">
         <div class="single-product">
             <div class="row">
                 <div class="col-6">
                     <div class="product-image">
-                        <div class="product-image-main">
-                            <img src="images/tshirt-1.png" alt="" id="product-main-image">
-                        </div>
-                        <div class="product-image-slider">
-                            <img src="images/tshirt-1.png" alt="" class="image-list">
-                            <img src="images/tshirt-2.png" alt="" class="image-list">
-                            <img src="images/tshirt-3.png" alt="" class="image-list">
-                            <img src="images/tshirt-group.png" alt="" class="image-list">
-                        </div>
+                        <div class="product-image-main"></div>
+                        <div class="product-image-slider"></div>
                     </div>
                 </div>
                 <div class="col-6">
                     <div class="breadcrumb">
                         <span><a href="#">Home</a></span>
                         <span><a href="#">Product</a></span>
-                        <span class="active">T-shirt</span>
+                        <span class="active product_name"></span>
                     </div>
 
                     <div class="product">
                         <div class="product-title">
-                            <h2>Half Sleve T-shirt for Men</h2>
+                            <h2></h2>
                         </div>
                         <div class="product-rating">
-                            <span><i class="bx bxs-star"></i></span>
-                            <span><i class="bx bxs-star"></i></span>
-                            <span><i class="bx bxs-star"></i></span>
-                            <span><i class="bx bxs-star"></i></span>
-                            <span><i class="bx bxs-star"></i></span>
-                            <span class="review">(47 Review)</span>
                         </div>
                         <div class="product-price">
-                            <span class="offer-price">$99.00</span>
-                            <span class="sale-price">$129.00</span>
+                            <span class="offer-price"></span>
+                            <span class="sale-price"></span>
                         </div>
 
                         <div class="product-details">
                             <h3>Description</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos est magnam quibusdam
-                                maiores sit perferendis minima cupiditate iusto earum repudiandae maxime vitae nostrum,
-                                ea cumque iste ipsa hic commodi tempore.</p>
+                            <p></p>
                         </div>
                         <div class="product-size">
                             <h4>Size</h4>
                             <div class="size-layout">
-                                <input type="radio" name="size" value="S" id="1" class="size-input">
-                                <label for="1" class="size">S</label>
-
-                                <input type="radio" name="size" value="M" id="2" class="size-input">
-                                <label for="2" class="size">M</label>
-
-                                <input type="radio" name="size" value="L" id="3" class="size-input">
-                                <label for="3" class="size">L</label>
-
-                                <input type="radio" name="size" value="XL" id="4" class="size-input">
-                                <label for="4" class="size">XL</label>
-
-                                <input type="radio" name="size" value="XXL" id="5" class="size-input">
-                                <label for="5" class="size">XXL</label>
                             </div>
                         </div>
                         <div class="product-color">
                             <h4>Color</h4>
                             <div class="color-layout">
-                                <input type="radio" name="color" value="black" class="color-input">
-                                <label for="black" class="black"></label>
-                                <input type="radio" name="color" value="red" class="color-input">
-                                <label for="red" class="red"></label>
-
-                                <input type="radio" name="color" value="blue" class="color-input">
-                                <label for="blue" class="blue"></label>
                             </div>
                         </div>
                         <span class="divider"></span>
@@ -112,6 +107,7 @@
      <!-- copyright section end -->
     <!--script-->
 	<script src="js/jquery.min.js"></script>
+    <script src="js/main_page.js"></script>
     <script src="js/product_script.js"></script>
 </body>
 

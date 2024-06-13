@@ -26,12 +26,15 @@ html {
 }
 
 body {
+    display: flex;
+    flex-direction: column;
     color: #666666;
     font-size: 14px;
     line-height: 1.80857;
     font-weight: normal;
     overflow-x: hidden;
     font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
 }
 
 a {
@@ -568,7 +571,7 @@ a:hover {
     font-weight: bold;
 }
 
-.fashion_section_2 {
+.fashion_section_products {
     width: 100%;
     margin-top: 30px;
 }
@@ -934,6 +937,8 @@ input.mail_bt::placeholder {
     float: left;
     background-color: #252525;
     height: auto;
+    margin-top: auto;
+    margin-bottom: 0;
 }
 
 .copyright_text {
