@@ -166,7 +166,7 @@ iframe {
   margin: 0 auto;
 }
 
-.container-login100 {
+.container-profile100 {
   width: 100%;
   min-height: calc(100vh - 74px);
   display: -webkit-box;
@@ -182,7 +182,7 @@ iframe {
   background-color: #fff;
 }
 
-.wrap-login100 {
+.wrap-profile100 {
   width: 500px;
   background: #fff;
   border-radius: 20px;
@@ -197,12 +197,12 @@ iframe {
 /*==================================================================
 [ Form ]*/
 
-.login100-form {
+.profile100-form {
   width: 100%;
   position: relative;
 }
 
-.login100-form-title {
+.profile100-form-title {
   font-size: 30px;
   color: #fff;
   line-height: 1.2;
@@ -216,6 +216,15 @@ iframe {
   background-color: #57b846;
   padding-top: 50px;
   padding-bottom: 39px;
+}
+
+/*------------------------------------------------------------------
+[ Input Label ]*/
+.wrap-input100-label {
+  position: absolute;
+  z-index: 2;
+  left: 17px;
+  top: -27px;
 }
 
 /*------------------------------------------------------------------
@@ -275,7 +284,7 @@ iframe {
 
 /*------------------------------------------------------------------
 [ Button ]*/
-.container-login100-form-btn {
+.container-profile100-form-btn {
   width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
@@ -286,7 +295,7 @@ iframe {
   justify-content: center;
 }
 
-.login100-form-btn {
+.profile100-form-btn {
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -311,7 +320,7 @@ iframe {
   transition: all 0.4s;
 }
 
-.login100-form-btn:hover {
+.profile100-form-btn:hover {
   background-color: #1b3815;
 }
 
@@ -386,7 +395,7 @@ iframe {
 /*//////////////////////////////////////////////////////////////////
 [ Responsive ]*/
 @media (max-width: 576px) {
-  .login100-form {
+  .profile100-form {
     padding-left: 15px;
     padding-right: 15px;
   }

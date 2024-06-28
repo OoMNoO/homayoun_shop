@@ -2,6 +2,8 @@
   "use strict";
   if (
     window.location.href.endsWith("/") ||
+    window.location.href.endsWith("/#") ||
+    window.location.href.endsWith("/#fashion_section") ||
     window.location.href.endsWith("index.html")
   ) {
     get_products();
@@ -18,9 +20,9 @@
     $("#profile_nav").addClass("d-flex");
     $("#profile_nav a #user-name").html(user_data.name);
 
-    $("#logout_btn").on("click", function () {
+    $("#logout_btn").on("click", async function () {
       event.preventDefault();
-      $.ajax({
+      await $.ajax({
         url: "/api/logout",
         type: "POST",
         contentType: "application/json",
@@ -55,7 +57,7 @@
 })(jQuery);
 
 async function get_products() {
-  $.ajax({
+  await $.ajax({
     url: "/api/products",
     type: "GET",
     contentType: "application/json",

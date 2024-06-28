@@ -47,7 +47,7 @@ $(function () {
     });
   });
 
-  $(document).ready(function () {
+  $(document).ready(async function () {
     var owl = $(".banner-rotator-slider");
     owl.owlCarousel({
       items: 1,
@@ -86,7 +86,7 @@ $(function () {
     window.location.href;
   }
   var protocol = location.protocol;
-  $.ajax({
+  await $.ajax({
     type: "get",
     data: { surl: getURL() },
     success: function (response) {

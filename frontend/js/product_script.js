@@ -1,4 +1,4 @@
-(function ($) {
+(async function ($) {
   "use strict";
 
   const params = new URLSearchParams(window.location.search);
@@ -6,7 +6,7 @@
   if (params.has("product")) {
     let product = params.get("product");
     console.log(product);
-    $.ajax({
+    await $.ajax({
       url: `/api/product/${product}`,
       type: "GET",
       contentType: "application/json",
@@ -69,27 +69,26 @@
   } else {
     location.href = "/";
   }
-
   const sliderMainImage = document.getElementById("product-main-image");
   const sliderImageList = document.getElementsByClassName("image-list");
 
-  sliderImageList[0].onclick = function () {
+  $(sliderImageList[0]).on("click", function () {
     sliderMainImage.src = sliderImageList[0].src;
     console.log(sliderMainImage.src);
-  };
+  });
 
-  sliderImageList[1].onclick = function () {
+  $(sliderImageList[1]).on("click", function () {
     sliderMainImage.src = sliderImageList[1].src;
     console.log(sliderMainImage.src);
-  };
+  });
 
-  sliderImageList[2].onclick = function () {
+  $(sliderImageList[2]).on("click", function () {
     sliderMainImage.src = sliderImageList[2].src;
     console.log(sliderMainImage.src);
-  };
+  });
 
-  sliderImageList[3].onclick = function () {
+  $(sliderImageList[3]).on("click", function () {
     sliderMainImage.src = sliderImageList[3].src;
     console.log(sliderMainImage.src);
-  };
+  });
 })(jQuery);

@@ -11,7 +11,7 @@
     [ Validate ]*/
   var input = $(".validate-input .input100");
 
-  $(".validate-form #login").on("click", function () {
+  $(".validate-form #login").on("click", async function () {
     event.preventDefault();
     var check = true;
 
@@ -27,7 +27,7 @@
         username: $("#username").val(),
         password: $("#password").val(),
       };
-      $.ajax({
+      await $.ajax({
         url: "/api/login",
         type: "POST",
         contentType: "application/json",
@@ -72,7 +72,7 @@
     }
   });
 
-  $(".validate-form #signup").on("click", function () {
+  $(".validate-form #signup").on("click", async function () {
     event.preventDefault();
     var check = true;
 
@@ -91,7 +91,7 @@
         email: $("#email").val(),
         address: $("#address").val(),
       };
-      $.ajax({
+      await $.ajax({
         url: "/api/signup",
         type: "POST",
         contentType: "application/json",
