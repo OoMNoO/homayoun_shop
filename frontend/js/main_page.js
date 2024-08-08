@@ -4,6 +4,7 @@
     window.location.href.endsWith("/") ||
     window.location.href.endsWith("/#") ||
     window.location.href.endsWith("/#fashion_section") ||
+    window.location.href.endsWith("/index.html") ||
     window.location.href.endsWith("index.html")
   ) {
     get_products();

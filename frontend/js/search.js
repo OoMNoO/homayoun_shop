@@ -7,7 +7,6 @@ async function get_products() {
   // get search_text
   const urlParams = new URLSearchParams(window.location.search);
   const search_text = urlParams.get("search") || "";
-  console.log("search_text: ", search_text == "");
   await $.ajax({
     url: `/api/search/${search_text}`,
     type: "GET",
@@ -26,12 +25,9 @@ async function get_products() {
       `);
       if (data["products"]) {
         let products = data["products"];
-        console.log("no result found");
         console.log("products: ", products);
         console.log("products: ", products.length);
-        let products_carousels_items = 0;
         products.forEach((product) => {
-          console.log("items", products_carousels_items);
           $(`#main_slider .carousel-inner #products_list`).append(`
             <div class="col-lg-4 col-sm-4">
                 <div class="box_main">
@@ -45,7 +41,6 @@ async function get_products() {
                 </div>
             </div>
           `);
-          products_carousels_items++;
         });
         if (products.length == 0) {
           $(`#main_slider .carousel-inner #products_list`).append(`
@@ -56,8 +51,8 @@ async function get_products() {
         }
       } else {
         $(`#main_slider .carousel-inner #products_list`).append(`
-          <div class="col-lg-4 col-sm-4">
-            <span class="bg-danger font-weight-bold">Error in searching for ${search_text}!!!</span>
+          <div class="col-12 d-flex justify-content-center">
+            <span class="bg-danger rounded text-white p-3 h2">Error in searching for ${search_text}!!!</span>
           </div>
         `);
       }

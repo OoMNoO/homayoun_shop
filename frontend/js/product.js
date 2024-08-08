@@ -81,9 +81,9 @@
               console.log("product_id:: ", product_id);
               console.log(
                 "shopping_cart product_id:: ",
-                shopping_cart_product.product_id
+                shopping_cart_product.id
               );
-              if (shopping_cart_product.product_id == product_id) {
+              if (shopping_cart_product.id == product_id) {
                 products_count_in_cart++;
               }
             });
@@ -142,45 +142,40 @@
       'div.color-layout input[type="radio"]:checked'
     ).val();
     console.log("Selected color:", selectedColor);
-    const price = $(".offer-price").text();
-    console.log("price:", price);
+    const product_price = $(".offer-price").text();
+    console.log("product_price:", product_price);
+    const product_image = $(".product-image-main img").attr("src");
+    console.log("product_image:", product_image);
 
     let shopping_cart = localStorage.getItem("shopping_cart");
     if (shopping_cart) {
       shopping_cart = JSON.parse(shopping_cart);
-      shopping_cart.push({
-        product_id: product_id,
-        product_name: product_name,
-        selectedSize: selectedSize,
-        selectedColor: selectedColor,
-        price: price,
-      });
     } else {
-      shopping_cart = [
-        {
-          product_id: product_id,
-          product_name: product_name,
-          selectedSize: selectedSize,
-          selectedColor: selectedColor,
-          price: price,
-        },
-      ];
+      shopping_cart = [];
     }
+    shopping_cart.push({
+      id: product_id,
+      name: product_name,
+      size: selectedSize,
+      color: selectedColor,
+      price: product_price,
+      image: product_image,
+    });
     localStorage.setItem("shopping_cart", JSON.stringify(shopping_cart));
     let products_count_in_cart = 0;
+    console.log("shopping_cart:: ", shopping_cart);
     shopping_cart.forEach((shopping_cart_product, index) => {
       console.log("product_id:: ", product_id);
-      console.log(
-        "shopping_cart product_id:: ",
-        shopping_cart_product.product_id
-      );
-      if (shopping_cart_product.product_id == product_id) {
+      console.log("shopping_cart product_id:: ", shopping_cart_product.id);
+      if (shopping_cart_product.id == product_id) {
         products_count_in_cart++;
       }
     });
     if (products_count_in_cart) {
       $(".add-cart-badge").removeClass("d-none");
       $(".add-cart-badge").text(products_count_in_cart);
+      $(".header_section_top .cart-badge").removeClass("d-none");
+      $(".header_section_top .cart-badge").text(shopping_cart.length);
     }
   });
 })(jQuery);

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
+    <!-- site metas -->
+    <title>HomayounShop</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!-- style css -->
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <!-- bootstrap css -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="css/vendors/bootstrap.min.css"
+    />
+    <!-- fevicon -->
+    <link rel="icon" href="images/fevicon.png" type="image/gif" />
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="css/vendors/jquery.mCustomScrollbar.min.css" />
+    <!-- fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="fonts/font-awesome-4.7.0/css/font-awesome.css"
+    />
+    <link
+      rel="stylesheet"
+      href="fonts/font-awesome-4.7.0/css/font-awesome.min.css"
+    />
+    <!--  -->
+    <!-- owl stylesheets -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Great+Vibes|Poppins:400,700&display=swap&subset=latin-ext"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/vendors/owl.carousel.min.css" />
+    <link rel="stylesoeet" href="css/vendors/owl.theme.default.min.css" />
+    <link
+      rel="stylesheet"
+      href="css/vendors/jquery.fancybox.min.css"
+      media="screen"
+    />
+  </head>
+  <body>
+    <!-- banner bg main start -->
+    <div>
+      <!-- header top section start -->
+      <div>
+        <div class="header_section_top">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="custom_menu">
+                <ul>
+                  <li>
+                    <a
+                      href="./index.html"
+                      style="font-weight: bold; font-size: 22px"
+                    >
+                      HomayounShop
+                    </a>
+                  </li>
+                  <li class="navbar-menu d-none">
+                    <a href="./aboutus.html">about us</a>
+                  </li>
+                  <li class="navbar-menu d-none" id="login_nav">
+                    <a class="text-success" href="./login.html">Login</a>
+                  </li>
+                  <li class="navbar-menu d-none" id="signup_nav">
+                    <a class="text-info" href="./signup.html">SignUp</a>
+                  </li>
+                  <li class="navbar-menu d-none">
+                    <div class="d-none" id="profile_nav">
+                      <a
+                        class="bg-dark text-primary rounded px-4 py-2 d-flex justify-content-center align-items-center"
+                        href="./profile.html"
+                      >
+                        <div id="user-name"></div>
+                        <img
+                          class="border border-primary rounded-circle w-25 ml-2 p-1"
+                          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAA/ElEQVR4nO2TMWoCQRSG/8pCSJHUJlbBE9n7XkTIOUzpMTSFLB4iiqw7f1IED+AFAsl2CosyG5JgZGbVnRRBf3jNsPN9M/veAKeRVnINYQRhmpeaETRphIS/QbneKrvWjmvlBcJoB/4jGYYQpE6B8qO8QJ3wz/rTGwjfA9zAjDyCKIAgaTinqPVyiyBpx7V8YmxTbdmTB4P/7+hzHcoexCx2e5Cv9dDhzeHg5rwC5QPULAvfgf1G2M337JW76RWU42Iwf4uecP966Yd3WIVwcjicX6M7g04u3ALl49Fw/ZYM3ALhKoBg5RGYrLzAZP5fVEYiJoOYvr/R52A7G5FPmGuoqERjAAAAAElFTkSuQmCC"
+                        />
+                      </a>
+                      <button
+                        id="logout_btn"
+                        class="bg-dark text-primary rounded ml-2"
+                      >
+                        <img
+                          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAABp0lEQVR4nO2ZS0oDQRCGP3IA37hSQcHXJbLxeQrd6BnUvQtvoIjoQQRFE+JkuiZKFl7BxBu4MCMNCWkGBM30dNKhP6jt3/X3s6YGAoFAwFsElhIox7A9SCRQ1hrOE49hXcGzQGojFDzVYc1J8nrGFHzaSl76JtoRLBRuQMGdMeiXQEXgfsCodDV6Rm5cGGj3BtT7OK+ewK5hoEXRKOj0BkyhlFcvhZKxoh2Kxty3o6z5K8HAmK7AnIIDgQ9bmkOZrQiW8clAE6a778pVBBO4wKYBgTPjCn0RmLSTpTsDe+a7IlB/hSk7mTo6AwLHCr4N3aQGMza0Xd5CRxkTjTrM2tIfyICukxSc/CMkU52KPuRDMZDAZmZGBy2xr4diQGDDawOaBLYEzgUu/hIK3kdmC9k4xLWibqJwjRoksO/1QyZw6nUp0ewXc5deFnNZYljBRwNvMC9w6KQrEb6Jx/SbOHVmwPvGljJaiwp2bHyVSX8Fiu9KKLg1DOjGbDVHc7fqvLkbw6K5Chaj5aS9rmnAqsCjxeQftCau0TOW9xdT5GrWA4FAgCL4AbGnrEhRELtUAAAAAElFTkSuQmCC"
+                        />
+                      </button>
+                    </div>
+                  </li>
+                  <div
+                    class="navbar-menu-container"
+                    onclick="show_navbar_menu()"
+                  >
+                    <div class="navbar-menu-bar1"></div>
+                    <div class="navbar-menu-bar2"></div>
+                    <div class="navbar-menu-bar3"></div>
+                  </div>
+                  <script>
+                    function show_navbar_menu() {
+                      $(".navbar-menu-container")
+                        .parent()
+                        .toggleClass("change");
+                      $(".navbar-menu").toggleClass("d-none");
+                    }
+                  </script>
+                  <div class="search-container">
+                    <input
+                      id="search-text"
+                      type="text"
+                      placeholder="Search.."
+                      name="search"
+                    />
+                    <button id="search-btn" onclick="search()">
+                      <i class="fa fa-search"></i>
+                    </button>
+                    <script>
+                      function search() {
+                        let search_text = $("#search-text").val();
+                        console.log(search_text);
+                        location.href = `/search.html?search=${search_text}`;
+                      }
+                    </script>
+                  </div>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- banner bg main end -->
+    <!-- fashion section start -->
+    <div class="fashion_section mt-5" id="fashion_section">
+      <div id="main_slider" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="container">
+              <h1 class="fashion_taital">shopping cart</h1>
+              <div class="fashion_section_products">
+                <div class="row" id="products_list"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- fashion section end -->
+    <!-- copyright section start -->
+    <div class="copyright_section">
+      <div class="container">
+        <p class="copyright_text">
+          © 2024 All Rights Reserved by
+          <a href="./index.html" style="font-weight: bold; font-size: 22px">
+            HomayounShop
+          </a>
+        </p>
+      </div>
+    </div>
+    <!-- copyright section end -->
+    <script src="js/vendors/jquery.min.js"></script>
+    <script src="js/vendors/popper.min.js"></script>
+    <script src="js/vendors/bootstrap.bundle.min.js"></script>
+    <script src="js/main_page.js"></script>
+    <script src="js/cart.js"></script>
+    <!-- <script src="js/vendors/plugin.js"></script> -->
+    <!-- <script src="js/custom.js"></script> -->
+  </body>
+</html>
