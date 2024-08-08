@@ -99,7 +99,7 @@
                 "images/women-clothes-img.png"
             ],
             "price": "17.00",
-            "sale-price": "8.00",
+            "sale_price": "8.00",
             "sizes": [
                 "M",
                 "L"
