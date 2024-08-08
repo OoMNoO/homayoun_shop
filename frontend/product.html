@@ -1,121 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<!-- mobile metas -->
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
-	<!-- site metas -->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
+    <!-- site metas -->
     <title>HomayounShop - Products</title>
-	<meta name="keywords" content="">
-	<meta name="description" content="">
-	<meta name="author" content="">
-	<!-- fevicon -->
-	<link rel="icon" href="images/fevicon.png" type="image/gif" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!-- fevicon -->
+    <link rel="icon" href="images/fevicon.png" type="image/gif" />
     <!-- style css -->
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="./css/product_style.css">
+    <link rel="stylesheet" href="./css/product_style.css" />
     <!---Boxicons CDN Setup for icons-->
-    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+      rel="stylesheet"
+    />
     <!-- bootstrap css -->
-    <link rel="stylesheet" type="text/css" href="css/vendors/bootstrap.min.css">
-</head>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="css/vendors/bootstrap.min.css"
+    />
+  </head>
 
-<body>
+  <body>
     <!-- header top section start -->
     <div>
-       <div class="header_section_top">
-          <div class="row">
-             <div class="col-sm-12">
-                <div class="custom_menu">
-                   <ul>
-                      <li><a href="./index.html" style="font-weight: bold;font-size: 22px;">HomayounShop</a></li>
-                      <li><a href="./aboutus.html">about  us</a></li>
-                      <li id="login_nav"><a class="text-success" href="./login.html">Login</a></li>
-                      <li id="signup_nav"><a class="text-info" href="./signup.html">SignUp</a></li>
-                      <li id="profile_nav" class="d-none">
-                         <a class="bg-dark text-primary rounded px-4 py-2 d-flex justify-content-center align-items-center" href="./profile.html">
-                            <div id="user-name"></div>
-                            <img class="border border-primary rounded-circle w-25 ml-2 p-1" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAA/ElEQVR4nO2TMWoCQRSG/8pCSJHUJlbBE9n7XkTIOUzpMTSFLB4iiqw7f1IED+AFAsl2CosyG5JgZGbVnRRBf3jNsPN9M/veAKeRVnINYQRhmpeaETRphIS/QbneKrvWjmvlBcJoB/4jGYYQpE6B8qO8QJ3wz/rTGwjfA9zAjDyCKIAgaTinqPVyiyBpx7V8YmxTbdmTB4P/7+hzHcoexCx2e5Cv9dDhzeHg5rwC5QPULAvfgf1G2M337JW76RWU42Iwf4uecP966Yd3WIVwcjicX6M7g04u3ALl49Fw/ZYM3ALhKoBg5RGYrLzAZP5fVEYiJoOYvr/R52A7G5FPmGuoqERjAAAAAElFTkSuQmCC">
-                         </a>
-                         <button id="logout_btn" class="bg-dark text-primary rounded ml-2">
-                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAABp0lEQVR4nO2ZS0oDQRCGP3IA37hSQcHXJbLxeQrd6BnUvQtvoIjoQQRFE+JkuiZKFl7BxBu4MCMNCWkGBM30dNKhP6jt3/X3s6YGAoFAwFsElhIox7A9SCRQ1hrOE49hXcGzQGojFDzVYc1J8nrGFHzaSl76JtoRLBRuQMGdMeiXQEXgfsCodDV6Rm5cGGj3BtT7OK+ewK5hoEXRKOj0BkyhlFcvhZKxoh2Kxty3o6z5K8HAmK7AnIIDgQ9bmkOZrQiW8clAE6a778pVBBO4wKYBgTPjCn0RmLSTpTsDe+a7IlB/hSk7mTo6AwLHCr4N3aQGMza0Xd5CRxkTjTrM2tIfyICukxSc/CMkU52KPuRDMZDAZmZGBy2xr4diQGDDawOaBLYEzgUu/hIK3kdmC9k4xLWibqJwjRoksO/1QyZw6nUp0ewXc5deFnNZYljBRwNvMC9w6KQrEb6Jx/SbOHVmwPvGljJaiwp2bHyVSX8Fiu9KKLg1DOjGbDVHc7fqvLkbw6K5Chaj5aS9rmnAqsCjxeQftCau0TOW9xdT5GrWA4FAgCL4AbGnrEhRELtUAAAAAElFTkSuQmCC">
-                         </button>
-                      </li>
-                   </ul>
+      <div class="header_section_top">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="custom_menu">
+              <ul>
+                <li>
+                  <a
+                    href="./index.html"
+                    style="font-weight: bold; font-size: 22px"
+                    >HomayounShop</a
+                  >
+                </li>
+                <li class="sidemenu d-none">
+                  <a href="./aboutus.html">about us</a>
+                </li>
+                <li class="sidemenu d-none" id="login_nav">
+                  <a class="text-success" href="./login.html">Login</a>
+                </li>
+                <li class="sidemenu d-none" id="signup_nav">
+                  <a class="text-info" href="./signup.html">SignUp</a>
+                </li>
+                <li class="sidemenu d-none">
+                  <div class="d-none" id="profile_nav">
+                    <a
+                      class="bg-dark text-primary rounded px-4 py-2 d-flex justify-content-center align-items-center"
+                      href="./profile.html"
+                    >
+                      <div id="user-name"></div>
+                      <img
+                        class="border border-primary rounded-circle w-25 ml-2 p-1"
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAA/ElEQVR4nO2TMWoCQRSG/8pCSJHUJlbBE9n7XkTIOUzpMTSFLB4iiqw7f1IED+AFAsl2CosyG5JgZGbVnRRBf3jNsPN9M/veAKeRVnINYQRhmpeaETRphIS/QbneKrvWjmvlBcJoB/4jGYYQpE6B8qO8QJ3wz/rTGwjfA9zAjDyCKIAgaTinqPVyiyBpx7V8YmxTbdmTB4P/7+hzHcoexCx2e5Cv9dDhzeHg5rwC5QPULAvfgf1G2M337JW76RWU42Iwf4uecP966Yd3WIVwcjicX6M7g04u3ALl49Fw/ZYM3ALhKoBg5RGYrLzAZP5fVEYiJoOYvr/R52A7G5FPmGuoqERjAAAAAElFTkSuQmCC"
+                      />
+                    </a>
+                    <button
+                      id="logout_btn"
+                      class="bg-dark text-primary rounded ml-2"
+                    >
+                      <img
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAABp0lEQVR4nO2ZS0oDQRCGP3IA37hSQcHXJbLxeQrd6BnUvQtvoIjoQQRFE+JkuiZKFl7BxBu4MCMNCWkGBM30dNKhP6jt3/X3s6YGAoFAwFsElhIox7A9SCRQ1hrOE49hXcGzQGojFDzVYc1J8nrGFHzaSl76JtoRLBRuQMGdMeiXQEXgfsCodDV6Rm5cGGj3BtT7OK+ewK5hoEXRKOj0BkyhlFcvhZKxoh2Kxty3o6z5K8HAmK7AnIIDgQ9bmkOZrQiW8clAE6a778pVBBO4wKYBgTPjCn0RmLSTpTsDe+a7IlB/hSk7mTo6AwLHCr4N3aQGMza0Xd5CRxkTjTrM2tIfyICukxSc/CMkU52KPuRDMZDAZmZGBy2xr4diQGDDawOaBLYEzgUu/hIK3kdmC9k4xLWibqJwjRoksO/1QyZw6nUp0ewXc5deFnNZYljBRwNvMC9w6KQrEb6Jx/SbOHVmwPvGljJaiwp2bHyVSX8Fiu9KKLg1DOjGbDVHc7fqvLkbw6K5Chaj5aS9rmnAqsCjxeQftCau0TOW9xdT5GrWA4FAgCL4AbGnrEhRELtUAAAAAElFTkSuQmCC"
+                      />
+                    </button>
+                  </div>
+                </li>
+                <div class="sidemenu-container" onclick="show_sidemenu()">
+                  <div class="sidemenu-bar1"></div>
+                  <div class="sidemenu-bar2"></div>
+                  <div class="sidemenu-bar3"></div>
                 </div>
-             </div>
+                <script>
+                  function show_sidemenu() {
+                    $(".sidemenu-container").parent().toggleClass("change");
+                    $(".sidemenu").toggleClass("d-none");
+                  }
+                </script>
+              </ul>
+            </div>
           </div>
-       </div>
+        </div>
+      </div>
     </div>
     <div class="container my-3">
-        <div class="single-product">
-            <div class="row">
-                <div class="col-6">
-                    <div class="product-image">
-                        <div class="product-image-main"></div>
-                        <div class="product-image-slider"></div>
-                    </div>
-                </div>
-                <div class="col-6">
-                    <div class="breadcrumb">
-                        <span><a href="/">Home</a></span>
-                        <span><a href="/#fashion_section">Product</a></span>
-                        <span class="active product_name"></span>
-                    </div>
-
-                    <div class="product">
-                        <div class="product-title">
-                            <h2></h2>
-                        </div>
-                        <div class="product-rating">
-                        </div>
-                        <div class="product-price">
-                            <span class="offer-price"></span>
-                            <span class="sale-price"></span>
-                        </div>
-
-                        <div class="product-details">
-                            <h3>Description</h3>
-                            <p></p>
-                        </div>
-                        <div class="product-size">
-                            <h4>Size</h4>
-                            <div class="size-layout">
-                            </div>
-                        </div>
-                        <div class="product-color">
-                            <h4>Color</h4>
-                            <div class="color-layout">
-                            </div>
-                        </div>
-                        <span class="divider"></span>
-
-                        <div class="product-btn-group">
-                            <div class="button buy-now"><i class='bx bxs-zap'></i> Buy Now</div>
-                            <div class="button add-cart"><i class='bx bxs-cart'></i> Add to Cart</div>
-                            <div class="button heart"><i class='bx bxs-heart'></i> Add to Wishlist</div>
-                        </div>
-                    </div>
-                </div>
+      <div class="single-product">
+        <div class="row">
+          <div class="col-6">
+            <div class="product-image">
+              <div class="product-image-main"></div>
+              <div class="product-image-slider"></div>
             </div>
+          </div>
+          <div class="col-6">
+            <div class="breadcrumb">
+              <span><a href="/">Home</a></span>
+              <span><a href="/#fashion_section">Product</a></span>
+              <span class="active product_name"></span>
+            </div>
+
+            <div class="product">
+              <div class="product-title">
+                <h2></h2>
+              </div>
+              <div class="product-rating"></div>
+              <div class="product-price">
+                <span class="offer-price"></span>
+                <span class="sale-price"></span>
+              </div>
+
+              <div class="product-details">
+                <h3>Description</h3>
+                <p></p>
+              </div>
+              <div class="product-size">
+                <h4>Size</h4>
+                <div class="size-layout"></div>
+              </div>
+              <div class="product-color">
+                <h4>Color</h4>
+                <div class="color-layout"></div>
+              </div>
+              <span class="divider"></span>
+
+              <div class="product-btn-group">
+                <div class="button buy-now">
+                  <i class="bx bxs-zap"></i> Buy Now
+                </div>
+                <div class="button add-cart">
+                  <i class="bx bxs-cart"></i> Add to Cart
+                </div>
+                <div class="button heart">
+                  <i class="bx bxs-heart"></i> Add to Wishlist
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
 
     <!-- copyright section start -->
     <div class="copyright_section">
-        <div>
-           <p class="copyright_text">© 2024 All Rights Reserved by <a href="./index.html" style="font-weight: bold;font-size: 22px;">HomayounShop</a></p>
-        </div>
-     </div>
-     <!-- copyright section end -->
+      <div>
+        <p class="copyright_text">
+          © 2024 All Rights Reserved by
+          <a href="./index.html" style="font-weight: bold; font-size: 22px"
+            >HomayounShop</a
+          >
+        </p>
+      </div>
+    </div>
+    <!-- copyright section end -->
     <!--script-->
-	<script src="js/vendors/jquery.min.js"></script>
+    <script src="js/vendors/jquery.min.js"></script>
     <script src="js/main_page.js"></script>
     <script src="js/product_script.js"></script>
-</body>
-
+  </body>
 </html>

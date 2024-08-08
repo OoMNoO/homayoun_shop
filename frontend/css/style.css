@@ -103,7 +103,7 @@ h4 a,
 h5 a,
 h6 a {
     color: #212121;
-    text-decoration: none!important;
+    text-decoration: none !important;
     opacity: 1
 }
 
@@ -148,7 +148,7 @@ img {
     height: auto;
 }
 
- :focus {
+:focus {
     outline: 0;
 }
 
@@ -231,11 +231,18 @@ button {
 
 .header_section_top {
     width: 100vw;
+    height: 74px;
     float: left;
     background-color: #2b2a29;
     clip-path: polygon(0 0, 100% 0, 96% 100%, 3% 100%);
-    height: auto;
     padding: 10px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header_section_top .row {
+    width: 100%;
 }
 
 .custom_menu {
@@ -342,6 +349,7 @@ button {
     .sidenav {
         padding-top: 15px;
     }
+
     .sidenav a {
         font-size: 18px;
     }
@@ -964,3 +972,39 @@ input.mail_bt::placeholder {
 
 
 /* copyright section end */
+
+
+
+/* sidemenu */
+
+.sidemenu-container {
+    display: inline-block;
+    cursor: pointer;
+    position: absolute;
+    left: 98px;
+}
+
+.sidemenu-bar1,
+.sidemenu-bar2,
+.sidemenu-bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: aqua;
+    margin: 6px 0;
+    transition: 0.4s;
+    border-radius: 12px;
+}
+
+.change .sidemenu-bar1 {
+    transform: translate(0, 11px) rotate(-45deg);
+}
+
+.change .sidemenu-bar2 {
+    opacity: 0;
+}
+
+.change .sidemenu-bar3 {
+    transform: translate(0, -11px) rotate(45deg);
+}
+
+/* sidemenu end */
