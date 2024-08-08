@@ -12,8 +12,6 @@
     <meta name="keywords" content="" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <!-- fevicon -->
-    <link rel="icon" href="images/fevicon.png" type="image/gif" />
     <!-- style css -->
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <link rel="stylesheet" type="text/css" href="css/about-us.css" />
@@ -23,6 +21,37 @@
       rel="stylesheet"
       type="text/css"
       href="css/vendors/bootstrap.min.css"
+    />
+    <!-- fevicon -->
+    <link rel="icon" href="images/fevicon.png" type="image/gif" />
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="css/vendors/jquery.mCustomScrollbar.min.css" />
+    <!-- fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="fonts/font-awesome-4.7.0/css/font-awesome.css"
+    />
+    <link
+      rel="stylesheet"
+      href="fonts/font-awesome-4.7.0/css/font-awesome.min.css"
+    />
+    <!--  -->
+    <!-- owl stylesheets -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Great+Vibes|Poppins:400,700&display=swap&subset=latin-ext"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/vendors/owl.carousel.min.css" />
+    <link rel="stylesoeet" href="css/vendors/owl.theme.default.min.css" />
+    <link
+      rel="stylesheet"
+      href="css/vendors/jquery.fancybox.min.css"
+      media="screen"
     />
   </head>
   <body>
@@ -37,8 +66,9 @@
                   <a
                     href="./index.html"
                     style="font-weight: bold; font-size: 22px"
-                    >HomayounShop</a
                   >
+                    HomayounShop
+                  </a>
                 </li>
                 <li class="navbar-menu d-none">
                   <a href="./aboutus.html">about us</a>
@@ -71,17 +101,35 @@
                     </button>
                   </div>
                 </li>
-                <div class="navbar-menu-container" onclick="show_navbar-menu()">
+                <div class="navbar-menu-container" onclick="show_navbar_menu()">
                   <div class="navbar-menu-bar1"></div>
                   <div class="navbar-menu-bar2"></div>
                   <div class="navbar-menu-bar3"></div>
                 </div>
                 <script>
-                  function show_navbar-menu() {
+                  function show_navbar_menu() {
                     $(".navbar-menu-container").parent().toggleClass("change");
                     $(".navbar-menu").toggleClass("d-none");
                   }
                 </script>
+                <div class="search-container">
+                  <input
+                    id="search-text"
+                    type="text"
+                    placeholder="Search.."
+                    name="search"
+                  />
+                  <button id="search-btn" onclick="search()">
+                    <i class="fa fa-search"></i>
+                  </button>
+                  <script>
+                    function search() {
+                      let search_text = $("#search-text").val();
+                      console.log(search_text);
+                      location.href = `/search.html?search=${search_text}`;
+                    }
+                  </script>
+                </div>
               </ul>
             </div>
           </div>

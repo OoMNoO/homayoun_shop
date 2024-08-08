@@ -264,7 +264,7 @@ button {
     float: left;
     font-size: 16px;
     color: #f1f1f1;
-    padding: 6px 10px 0px 10px;
+    padding: 0px 10px 0px 10px;
 }
 
 .custom_menu li a {
@@ -803,6 +803,7 @@ a:hover {
     0% {
         -webkit-transform: rotate(0deg);
     }
+
     100% {
         -webkit-transform: rotate(360deg);
     }
@@ -812,6 +813,7 @@ a:hover {
     0% {
         transform: rotate(0deg);
     }
+
     100% {
         transform: rotate(360deg);
     }
@@ -1008,3 +1010,30 @@ input.mail_bt::placeholder {
 }
 
 /* navbar-menu end */
+
+/* search-bar */
+
+input[type=text] {
+    padding: 6px;
+    font-size: 17px;
+    border: none;
+    border-radius: 7px;
+    margin-right: 2px;
+    padding-left: 7px;
+}
+
+.search-container button {
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.search-container button:hover {
+    background: #ccc;
+}
+
+/* search-bar end */

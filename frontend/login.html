@@ -65,10 +65,29 @@
                   <a
                     href="./index.html"
                     style="font-weight: bold; font-size: 22px"
-                    >HomayounShop</a
                   >
+                    HomayounShop
+                  </a>
                 </li>
                 <li><a href="./aboutus.html">about us</a></li>
+                <div class="search-container">
+                  <input
+                    id="search-text"
+                    type="text"
+                    placeholder="Search.."
+                    name="search"
+                  />
+                  <button id="search-btn" onclick="search()">
+                    <i class="fa fa-search"></i>
+                  </button>
+                  <script>
+                    function search() {
+                      let search_text = $("#search-text").val();
+                      console.log(search_text);
+                      location.href = `/search.html?search=${search_text}`;
+                    }
+                  </script>
+                </div>
               </ul>
             </div>
           </div>

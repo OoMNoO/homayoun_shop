@@ -171,4 +171,26 @@ router.get("/product/:product", (req, res) => {
   return;
 });
 
+router.get("/search/:search_text", (req, res) => {
+  const search_text = req.params.search_text;
+  console.log(`search for: ${search_text}`);
+  let rawdata = fs.readFileSync("./db.json");
+  let db_data = JSON.parse(rawdata);
+  let products = db_data["products"];
+  console.log(products);
+  let search_products = [];
+  products.forEach((product) => {
+    if (product["name"].includes(search_text)) {
+      search_products.push(product);
+    }
+  });
+  console.log(search_products);
+  if (search_products) {
+    res.status(200).send({ products: search_products });
+  } else {
+    res.status(404).json({ error: "no products found!" });
+  }
+  return;
+});
+
 module.exports = router;
