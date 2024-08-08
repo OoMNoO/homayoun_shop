@@ -10,9 +10,12 @@
   }
   let token = localStorage.getItem("token");
   let user_data = localStorage.getItem("user_data");
+  let shopping_cart = localStorage.getItem("shopping_cart");
   if (token && user_data) {
     token = JSON.parse(token);
     user_data = JSON.parse(user_data);
+    shopping_cart = JSON.parse(shopping_cart);
+    let shopping_cart_items_count = 0;
     console.log(token);
     $("#login_nav").hide();
     $("#signup_nav").hide();

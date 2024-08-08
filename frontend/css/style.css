@@ -1013,6 +1013,11 @@ input.mail_bt::placeholder {
 
 /* search-bar */
 
+.search-container {
+    position: absolute;
+    right: 98px;
+}
+
 input[type=text] {
     padding: 6px;
     font-size: 17px;
@@ -1037,3 +1042,16 @@ input[type=text] {
 }
 
 /* search-bar end */
+
+
+/* shoping-cart */
+.shoping-cart-button {
+    display: inline-block;
+    cursor: pointer;
+    position: absolute;
+    left: 163px;
+    color: aqua;
+    font-size: 26px;
+}
+
+/* shoping-cart end */

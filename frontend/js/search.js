@@ -6,7 +6,8 @@
 async function get_products() {
   // get search_text
   const urlParams = new URLSearchParams(window.location.search);
-  const search_text = urlParams.get("search");
+  const search_text = urlParams.get("search") || "";
+  console.log("search_text: ", search_text == "");
   await $.ajax({
     url: `/api/search/${search_text}`,
     type: "GET",
