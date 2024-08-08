@@ -1052,6 +1052,20 @@ input[type=text] {
     left: 163px;
     color: aqua;
     font-size: 26px;
+    transition: 0.4s all ease-in-out;
+}
+
+.shoping-cart-button .cart-badge {
+    transition: 0.4s all ease-in-out;
+}
+
+.shoping-cart-button:hover {
+    color: #c1a600;
+}
+
+.shoping-cart-button:hover>.cart-badge {
+    color: aqua;
+    background: #c1a600;
 }
 
 /* shoping-cart end */

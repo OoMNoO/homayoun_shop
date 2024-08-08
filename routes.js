@@ -172,7 +172,7 @@ router.get("/product/:product", (req, res) => {
 });
 
 router.get("/search/:search_text?", (req, res) => {
-  const search_text = req.params.search_text.toLowerCase() || "";
+  let search_text = req.params.search_text || "";
   console.log(`search for: ${search_text}`);
   console.log(search_text == "");
   let rawdata = fs.readFileSync("./db.json");
@@ -182,6 +182,7 @@ router.get("/search/:search_text?", (req, res) => {
   let search_products = [];
   if (search_text != "") {
     products.forEach((product) => {
+      search_text = search_text.toLowerCase();
       let product_name = product["name"].toLowerCase();
       if (product_name.includes(search_text)) {
         search_products.push(product);
