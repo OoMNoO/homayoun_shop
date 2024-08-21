@@ -26,7 +26,7 @@
           $(".product_name").html(product.name);
           $(".product-title h2").html(product.name);
           if (product.sale_price) {
-            $(".sale-price").html("$" + product.price);
+            $(".no-sale-price").html("$" + product.price);
             $(".offer-price").html("$" + product.sale_price);
           } else {
             $(".offer-price").html("$" + product.price);
@@ -142,8 +142,10 @@
       'div.color-layout input[type="radio"]:checked'
     ).val();
     console.log("Selected color:", selectedColor);
-    const product_price = $(".offer-price").text();
+    const product_price = $(".offer-price").text().replace("$", "");
     console.log("product_price:", product_price);
+    const product_no_sale_price = $(".no-sale-price").text().replace("$", "");
+    console.log("product_no_sale_price:", product_no_sale_price);
     const product_image = $(".product-image-main img").attr("src");
     console.log("product_image:", product_image);
 
@@ -159,6 +161,7 @@
       size: selectedSize,
       color: selectedColor,
       price: product_price,
+      no_sale_price: product_no_sale_price,
       image: product_image,
     });
     localStorage.setItem("shopping_cart", JSON.stringify(shopping_cart));

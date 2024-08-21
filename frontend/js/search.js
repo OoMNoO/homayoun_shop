@@ -32,8 +32,8 @@ async function get_products() {
             <div class="col-lg-4 col-sm-4">
                 <div class="box_main">
                   <h4 class="product_text">${product.name}</h4>
-                  <p class="price_text">Price  <span style="color: #262626;">$ ${product.price}</span></p>
-                  <div class="tshirt_img"><img src=${product.img[0]}></div>
+                  <p class="price_text">Price  <span style="color: #262626;">$${product.price}</span></p>
+                  <div class="product_img"><img src=${product.img[0]}></div>
                   <div class="btn_main">
                       <div class="buy_bt"><a href="/product.html?product=${product.id}">Buy Now</a></div>
                       <div class="seemore_bt"><a href="/product.html?product=${product.id}">See More</a></div>

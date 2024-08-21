@@ -130,7 +130,7 @@
   font-weight: 700;
 }
 
-.product-price .sale-price {
+.product-price .no-sale-price {
   font-size: 22px;
   font-weight: 500;
   text-decoration: line-through;
