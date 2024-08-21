@@ -31,7 +31,7 @@ async function get_products() {
           $(`#main_slider .carousel-inner #products_list`).append(`
             <div class="col-lg-4 col-sm-4">
                 <div class="box_main">
-                  <h4 class="shirt_text">${product.name}</h4>
+                  <h4 class="product_text">${product.name}</h4>
                   <p class="price_text">Price  <span style="color: #262626;">$ ${product.price}</span></p>
                   <div class="tshirt_img"><img src=${product.img[0]}></div>
                   <div class="btn_main">
