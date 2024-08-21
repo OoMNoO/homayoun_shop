@@ -51,11 +51,11 @@ async function show_cart_products(shopping_cart) {
 
     console.log("processedCart: ", processedCart);
 
-    shopping_cart.forEach((product, index) => {
+    processedCart.forEach((product, index) => {
       $(`#main_slider .carousel-inner #products_list`).append(`
         <div class="col-12">
           <div class="box_main row" id="${product.id}">
-            <div class="col-6 row mr-auto">
+            <div class="col-5 row mx-0">
               <div class="product_img col-12"><img src=${product.image}></div>
               <div class="col-12">
                 <h4 class="product_text">${product.name}</h4>
@@ -71,6 +71,18 @@ async function show_cart_products(shopping_cart) {
                 </div>
               </div>
             </div>
+            <div class="col-1 row ml-0 mr-auto d-flex flex-column justify-content-center align-content-center">
+              <div class="product-size">
+                <div class="size-layout">
+                  <label class="size">${product.size}</label>
+                </div>
+              </div>
+              <div class="product-color">
+                <div class="color-layout">
+                  <label class=${product.color}></label>
+                </div>
+              </div>
+            </div>
             <div class="col-3 d-flex mx-auto">
               <div class="btn_main" id="${product.id}_count">
                 <button class="increase_count">+</button>
@@ -79,7 +91,7 @@ async function show_cart_products(shopping_cart) {
                   type="text"
                   name="count"
                   placeholder="1"
-                  value="1"
+                  value="${product.quantity ? product.quantity : 1}"
                   readonly
                 />
                 <button class="decrease_count"">-</button>

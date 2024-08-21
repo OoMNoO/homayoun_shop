@@ -659,7 +659,7 @@ a:hover {
     font-size: 16px;
     font-weight: 500;
     text-decoration: line-through;
-    color: grey;
+    color: rgb(184, 184, 184);
 }
 
 .product_img {
@@ -678,6 +678,87 @@ a:hover {
 
 .cart_section_products .product_img img {
     height: 100%;
+}
+
+/** cart_section Product size **/
+.cart_section_products .product-size {
+    margin: 10px 0;
+}
+
+.cart_section_products .product-size h4 {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.cart_section_products .product-size .size-layout {
+    margin: 5px 0;
+    display: contents;
+    align-items: center;
+    gap: 10px;
+}
+
+.cart_section_products .product-size .size-layout .size {
+    background: rgb(238, 238, 238);
+    width: 40px;
+    height: 40px;
+    padding: 6px 10px;
+    border: 1px solid rgb(221, 221, 221);
+    border-radius: 4px;
+    margin-left: 0px;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+}
+
+
+/** cart_section Product Color **/
+.product-color {
+    margin: 10px 0;
+    justify-content: center;
+}
+
+.product-color h4 {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.product-color .color-layout {
+    margin: 5px 0;
+    display: flex;
+    gap: 10px;
+}
+
+.product-color .color-layout label {
+    border-radius: 4px;
+    cursor: pointer;
+    content: "";
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+}
+
+.product-color .color-layout .black {
+    background-color: black;
+}
+
+.product-color .color-layout .red {
+    background-color: red;
+}
+
+.product-color .color-layout .blue {
+    background-color: blue;
+}
+
+.product-color .color-layout .gray {
+    background-color: gray;
+}
+
+.product-color .color-layout .yellow {
+    background-color: yellow;
+}
+
+.product-color .color-layout .red {
+    background-color: red;
 }
 
 .btn_main {
