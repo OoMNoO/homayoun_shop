@@ -76,7 +76,7 @@
           let shopping_cart = localStorage.getItem("shopping_cart");
           if (shopping_cart) {
             shopping_cart = JSON.parse(shopping_cart);
-            let products_count_in_cart = 0;
+            let product_count_in_cart = 0;
             shopping_cart.forEach((shopping_cart_product, index) => {
               console.log("product_id:: ", product_id);
               console.log(
@@ -84,12 +84,12 @@
                 shopping_cart_product.id
               );
               if (shopping_cart_product.id == product_id) {
-                products_count_in_cart++;
+                product_count_in_cart += shopping_cart_product.quantity;
               }
             });
-            if (products_count_in_cart) {
+            if (product_count_in_cart) {
               $(".add-cart-badge").removeClass("d-none");
-              $(".add-cart-badge").text(products_count_in_cart);
+              $(".add-cart-badge").text(product_count_in_cart);
             }
           }
         }
@@ -155,7 +155,9 @@
     } else {
       shopping_cart = [];
     }
-    shopping_cart.push({
+
+    let item = {
+      cart_id: (Math.random() + 1).toString(36).substring(7),
       id: product_id,
       name: product_name,
       size: selectedSize,
@@ -163,22 +165,52 @@
       price: product_price,
       no_sale_price: product_no_sale_price,
       image: product_image,
+      quantity: 1,
+    };
+
+    const existingItem = shopping_cart.find((processedItem) => {
+      var temp_item = JSON.parse(JSON.stringify(item));
+      var temp_processedItem = JSON.parse(JSON.stringify(processedItem));
+      delete temp_item["cart_id"];
+      delete temp_item["quantity"];
+      delete temp_processedItem["cart_id"];
+      delete temp_processedItem["quantity"];
+      console.log("temp_item: ", temp_item);
+      console.log("processedItem: ", temp_processedItem);
+      if (JSON.stringify(temp_processedItem) === JSON.stringify(temp_item)) {
+        return processedItem;
+      } else {
+        return false;
+      }
     });
+
+    if (existingItem) {
+      console.log("existingItem: ", existingItem);
+      console.log("existingItem id: ", existingItem.id);
+      console.log("existingItem quantity: ", existingItem.quantity);
+      existingItem.quantity = (existingItem.quantity || 1) + 1;
+    } else {
+      console.log("not existingItem");
+      shopping_cart.push(item);
+    }
+
     localStorage.setItem("shopping_cart", JSON.stringify(shopping_cart));
-    let products_count_in_cart = 0;
+    let all_products_count_in_cart = 0;
+    let product_count_in_cart = 0;
     console.log("shopping_cart:: ", shopping_cart);
     shopping_cart.forEach((shopping_cart_product, index) => {
       console.log("product_id:: ", product_id);
       console.log("shopping_cart product_id:: ", shopping_cart_product.id);
       if (shopping_cart_product.id == product_id) {
-        products_count_in_cart++;
+        product_count_in_cart += shopping_cart_product.quantity;
       }
+      all_products_count_in_cart += shopping_cart_product.quantity;
     });
-    if (products_count_in_cart) {
+    if (product_count_in_cart) {
       $(".add-cart-badge").removeClass("d-none");
-      $(".add-cart-badge").text(products_count_in_cart);
+      $(".add-cart-badge").text(product_count_in_cart);
       $(".header_section_top .cart-badge").removeClass("d-none");
-      $(".header_section_top .cart-badge").text(shopping_cart.length);
+      $(".header_section_top .cart-badge").text(all_products_count_in_cart);
     }
   });
 })(jQuery);

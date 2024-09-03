@@ -5,11 +5,15 @@
     shopping_cart = JSON.parse(shopping_cart);
     console.log("shopping_cart: ", shopping_cart);
     let products_count_in_cart = shopping_cart.length;
-    console.log("products_count_in_cart: ", products_count_in_cart);
+    let all_products_count_in_cart = 0;
+    shopping_cart.forEach((shopping_cart_product, index) => {
+      all_products_count_in_cart += shopping_cart_product.quantity;
+    });
+    console.log("all_products_count_in_cart: ", all_products_count_in_cart);
     if (!window.location.href.endsWith("/cart.html")) {
-      if (products_count_in_cart) {
+      if (all_products_count_in_cart) {
         $(".header_section_top .cart-badge").removeClass("d-none");
-        $(".header_section_top .cart-badge").text(products_count_in_cart);
+        $(".header_section_top .cart-badge").text(all_products_count_in_cart);
       }
     }
   }
@@ -19,7 +23,25 @@
     const product_id = $(this).parent().attr("id").replace("_count", "");
     const count_holder = $(this).parent().find(".count")[0];
     const prev_count = parseInt($(count_holder).val());
-    $(count_holder).val(prev_count - 1);
+    if (prev_count > 1) {
+      $(count_holder).val(prev_count - 1);
+      if (prev_count == 2) {
+        $(this).html(`<i class="fa fa-trash text-danger"></i>`);
+      }
+      const product_price = $(`#${product_id} .offer-price`)
+        .text()
+        .replace("$", "");
+      $(`#${product_id} .total_price`).text(
+        "$" + product_price * (prev_count - 1)
+      );
+    } else {
+      if (prev_count == 1) {
+        console.log("remove from cart");
+        $($(`#${product_id}`).parent()).slideUp(() => {
+          $($(`#${product_id}`).parent()).remove();
+        });
+      }
+    }
   });
 
   $(".increase_count").on("click", function () {
@@ -27,6 +49,16 @@
     const count_holder = $(this).parent().find(".count")[0];
     const prev_count = parseInt($(count_holder).val());
     $(count_holder).val(prev_count + 1);
+    const product_price = $(`#${product_id} .offer-price`)
+      .text()
+      .replace("$", "");
+    $(`#${product_id} .total_price`).text(
+      "$" + product_price * (prev_count + 1)
+    );
+    if (prev_count == 1) {
+      const decrease_count = $(this).parent().find(".decrease_count")[0];
+      $(decrease_count).html(`-`);
+    }
   });
 })(jQuery);
 
@@ -35,26 +67,10 @@ async function show_cart_products(shopping_cart) {
     console.log("shopping_cart: ", shopping_cart);
     console.log("shopping_cart length: ", shopping_cart.length);
 
-    const processedCart = [];
-
-    shopping_cart.forEach((item) => {
-      const existingItem = processedCart.find((processedItem) => {
-        return JSON.stringify(processedItem) === JSON.stringify(item);
-      });
-
-      if (existingItem) {
-        existingItem.quantity = (existingItem.quantity || 1) + 1;
-      } else {
-        processedCart.push(item);
-      }
-    });
-
-    console.log("processedCart: ", processedCart);
-
-    processedCart.forEach((product, index) => {
+    shopping_cart.forEach((product, index) => {
       $(`#main_slider .carousel-inner #products_list`).append(`
         <div class="col-12">
-          <div class="box_main row" id="${product.id}">
+          <div class="box_main row" id="${product.id}_${index}">
             <div class="col-5 row mx-0">
               <div class="product_img col-12"><img src=${product.image}></div>
               <div class="col-12">
@@ -84,8 +100,12 @@ async function show_cart_products(shopping_cart) {
               </div>
             </div>
             <div class="col-3 d-flex mx-auto">
-              <div class="btn_main" id="${product.id}_count">
-                <button class="increase_count">+</button>
+              <div class="btn_main" id="${product.id}_${index}_count">
+                <button class="decrease_count">${
+                  product.quantity == 1
+                    ? `<i class="fa fa-trash text-danger"></i>`
+                    : `-`
+                }</button>
                 <input
                   class="count"
                   type="text"
@@ -94,16 +114,20 @@ async function show_cart_products(shopping_cart) {
                   value="${product.quantity ? product.quantity : 1}"
                   readonly
                 />
-                <button class="decrease_count"">-</button>
+                <button class="increase_count"">+</button>
               </div>
             </div>
             <div class="col-2 d-flex total_price_col">
-              <span class="total_price">$${product.price}</span>
+              <span class="total_price">$${
+                product.price * product.quantity
+              }</span>
             </div>
           </div>
         </div>
       `);
     });
+    // append total price
+    // insert here
     $(`#main_slider .carousel-inner #products_list`).append(`
       <div class="checkout_bt">
         <a href="#">Check out</a>

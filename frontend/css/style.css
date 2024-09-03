@@ -708,6 +708,9 @@ a:hover {
     font-size: 16px;
     font-weight: 700;
     text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
 }
 
 
@@ -778,13 +781,13 @@ a:hover {
     border-radius: 10px;
 }
 
-.cart_section_products .btn_main .increase_count {
+.cart_section_products .btn_main .decrease_count {
     border-right: none;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
 }
 
-.cart_section_products .btn_main .decrease_count {
+.cart_section_products .btn_main .increase_count {
     border-left: none;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
