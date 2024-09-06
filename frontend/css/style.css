@@ -590,6 +590,15 @@ a:hover {
 .cart_section_products {
     width: 100%;
     margin-top: 30px;
+    position: relative;
+}
+
+.cart_section_products .total_items {
+    position: absolute;
+    top: -32px;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
 }
 
 .box_main {
@@ -605,6 +614,11 @@ a:hover {
 .cart_section_products .box_main {
     border-radius: 7px;
     height: 250px;
+}
+
+.cart_section_products .box_main#checkout_box {
+    border-radius: 7px;
+    height: 74px;
 }
 
 .product_text {
@@ -802,7 +816,8 @@ a:hover {
     border-left: 1px solid black;
 }
 
-.cart_section_products .total_price {
+.cart_section_products .total_price,
+.cart_section_products .total_cart_price {
     justify-content: center;
     margin: auto;
     text-align: center;
